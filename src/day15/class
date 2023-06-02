@@ -1,0 +1,29 @@
+
+
+9. Create a class called UniqueCharacters, Write a program that can return
+the unique characters from a String
+
+	            Ex:
+	                input:
+	                    AABCCD
+
+	                output:
+	                    BD
+
+
+
+
+
+
+result += "" + str.charAt(i);
+
+ for (int i = 0; i < str.length(); i++) {
+
+            if  (str.substring(i+1).contains("" + str.charAt(i)) ||
+                    str.substring(i-1,i).contains("" + str.charAt(i)) ){
+               continue;
+
+
+            }else{
+                result += "" + str.charAt(i);
+            }
