@@ -15,13 +15,16 @@ public class PasswordValidation {
             return false;
         }else{
             for (int i = 0; i < arr.length; i++) {
-                if ( arr[i]>'0' &&arr[i]<='9'){
+                if ( arr[i]==' ') {
+                    return false;
+
+                } else if (Character.isDigit(arr[i])){
                     digit++;
                 }else if( arr[i]>='a'&&arr[i]<='z'){
                     lowerCase++;
                 }else if(arr[i]>='A'&&arr[i]<='Z'){
                     upperCase++;
-                }else if(arr[i]>='!'&&arr[i]<='.'){
+                }else if(!Character.isLetterOrDigit(arr[i])){
                     specSimbol++;
                 }
             }
@@ -36,5 +39,6 @@ public class PasswordValidation {
         System.out.println("PasswordValidations(\"12345d\") = " + PasswordValidations("12345d"));
         System.out.println("PasswordValidations(\"aaaa!4\") = " + PasswordValidations("aaaa!4"));
         System.out.println("PasswordValidations(\"aaaA!4\") = " + PasswordValidations("aaaA!4"));
+        System.out.println("PasswordValidations(\"@#><$\") = " + PasswordValidations("@#><$"));
     }
 }
